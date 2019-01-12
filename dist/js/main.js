@@ -31,3 +31,19 @@ function toggleMenu() {
     showMenu = false;
   }
 }
+
+function copyToClipboard(elementId) {
+  var aux = document.createElement("input");
+  aux.setAttribute("value", document.getElementById(elementId).innerHTML);
+  document.body.appendChild(aux);
+  aux.select();
+  document.execCommand("copy");
+  document.body.removeChild(aux);
+}
+
+function anime() {
+  const faCopy = document.querySelector('.fa-copy');
+  if(faCopy.className !== 'activeCopy') {
+    faCopy.classList.add('activeCopy');
+  }
+}
